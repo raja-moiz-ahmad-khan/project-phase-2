@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>Ear Rings</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  float:right;
+  padding: 10px;
+  font-size: 90%;
+  width: 2.5%;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  
+  
+}
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+
+.start{
+
+   background-color:#000000;
+   
+   }
+   .topmenu{
+    
+	padding:50px 40px;
+       
+	 float:right;
+	   
+   }
+   .topmenu a{
+   padding:2px;
+   }
+           .logo{
+		   
+		   top:10px;
+		   margin-left:10px;
+		   
+		   
+		   }
+
+
+
+
+</style>
+</head>
+<body>
+
+
+         <div class="start">
+	 <img src="logo.jpg" class="logo"  width=10% ,height=10% >
+	 <div class="topmenu">
+          <a href="https://web.facebook.com/%D9%85%D9%90%D8%B1%DA%BE%DB%92-%D8%AF%D9%84-%D8%A2%D8%B1%D8%A7%D8%A1-105489827835871">
+         <img alt="fb" src="fb.png"
+         width="45" height="45">
+      </a>
+   
+        <a href="https://www.instagram.com/mirhe_dillara/">
+         <img alt="insta" src="insta.jpg"
+         width="45" height="45">
+      </a>
+	  
+	       <a href="#home">
+         <img alt="twitter" src="twitter.png"
+         width="45" height="45">
+      </a>	 
+		 
+     </div>
+	 </div>
+
+	                                                  <!-- navigation bar -->
+
+	                                                  <!-- navigation bar -->
+	 
+	 <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color:#FFDF00;">Mirhe Dillara</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="file:///C:/Users/DELL/Desktop/labproject/lab.html">Home</a></li>
+        
+        <li><a href="file:///C:/Users/DELL/Desktop/labproject/aboutus.html">About Us</a></li>
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="file:///C:/Users/DELL/Desktop/labproject/Clothing.html">Women Clothing</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/labproject/Earing.html">Ear Rings</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/labproject/Necklace.html">Necklace</a></li>
+          </ul>
+        </li>
+        <li><a href="file:///C:/Users/DELL/Desktop/labproject/contact%20us.html">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	 
+	 
+
+<?php
+	if(isset($_SESSION['valid'])) {			
+		include("connection.php");					
+		$result = mysqli_query($mysqli, "SELECT * FROM login");
+	?>
+				
+		Welcome<?php echo $_SESSION['name']  ?> ! <a href='logout.php'>Logout</a><br/>
+		<br/>
+		<a href='view.php' style="color:#FFDF00;"><center><h1>View and Add Products</h1></center></a>
+		<br/><br/>
+
+
+        <div style="text-align: center ; color="#FFD700">
+            <p><br><br>
+                مرھےدل ا`را© <br>
+                Dream.Design& Deliver
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>

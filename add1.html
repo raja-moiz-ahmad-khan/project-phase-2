@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link type="text/css" href="mystyle.css" rel="stylesheet">
+
+	<title>Products Page</title>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUOEEEI_y7YP5yq3PWKJ5ChNfRNmleSgA&callback=initMap&libraries=&v=weekly" defer ></script>
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of Uluru
+			const uluru = { lat: 31.3904655, lng: 74.2402368 };
+			// The map, centered at Uluru
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 15,
+				center: uluru,
+			});
+			// The marker, positioned at Uluru
+			const marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+			});
+		}
+
+		function handleChange(e) {
+			const value = e.target.value;
+			setState({answer: value});
+		}
+
+	</script>
+
+
+</head>
+<body>
+<div class="container" style="background-color: #222222; height: 100%">
+
+	<div>
+		<div class="row">
+			<div class="col-sm-6">
+				<a href="index.php"> <img src="logo1.png" width="300" height="200" alt="img"/></a>
+			</div>
+			<div class="col-sm-6" style="padding-left: 13%">
+				<div class="hyperl" style="text-align:center; width:70% ; padding-top:2%">
+					<br><br>
+
+					<a href="https://www.facebook.com" class="fa fa-facebook" ></a>
+					<a href="https://www.twitter.com" class="fa fa-twitter" ></a>
+					<a href="https://www.linkedin.cn" class="fa fa-linkedin" ></a>
+					<a href="https://www.youtube.com" class="fa fa-youtube" ></a>
+					<a href="https://www.instagram.com" class="fa fa-instagram" ></a>
+					<h3> </h3>
+					<h6 style="color: seagreen">
+						<a  href="Contact Us.php">Request</a> | <a href="Contact Us.php">Contact Us</a></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div>
+		<nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="index.php" style="color: green">GRAB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="About Us.php">About Us</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Products
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="add.html">Add Products</a>
+							<a class="dropdown-item" href="view.php">Modify Products</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="Products.php">Latest Products</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a  class="nav-link disabled" href="logout.php">Log Out</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+
+
+
+	<div class="container" style="margin-top: 5%">
+		<div class="row">
+			<div class="col-sm-3" ></div>
+			<div class="col-sm-6">
+				<h2>Add Products</h2><br>
+				<form method="post" action="add.php" name="form1" enctype="multipart/form-data">
+					<label> Name: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="name" id="name" placeholder="Enter Product..." required> <br>
+					<label> Quantity: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="qty" placeholder="Enter Quantity..." required> <br>
+					<label> Price: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="price" placeholder="Enter Price..." required> <br>
+					<label> Code: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="code" placeholder="Enter Product Code..." required> <br>
+					<label> In Stock: </label>
+					 Yes  <input class="radio-inline" type="radio" style="background-color: black" name="stock" value="yes" required>
+					 No  <input class="radio-inline" type="radio" style="background-color: rgba(0, 0, 0, 0.5)" name="stock" value="no"> <br>
+					<label> Discount: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="discount" placeholder="Enter Discount..." required> <br>
+					<label> Size: </label>
+					<input class="form-control" style="background-color: rgba(0, 0, 0, 0.5)" type="text" name="size" placeholder="Enter Sizes..." required> <br>
+					Details: <br>
+					<textarea class="form-control"  name="details" style="background-color: rgba(0, 0, 0, 0.5)" col="20" rows="5" placeholder="Description..." required></textarea><br>
+					<input type="file" name="file" placeholder="jpg" required><br><br>
+					<input class="btn btn-success"  type="submit" name="Submit" value="Add">
+				</form>
+			</div>
+			<div class="col-sm-3" ></div>
+
+		</div>
+	</div>
+	<div style="padding: 10%"></div>
+</div>
+
+<footer>
+	<div style=" float:right; text-align:center; width:100% ; padding-top:2%">
+		<a href="https://www.facebook.com" class="fa fa-facebook" ></a>
+		<a href="https://www.twitter.com" class="fa fa-twitter" ></a>
+		<a href="https://www.linkedin.cn" class="fa fa-linkedin" ></a>
+		<a href="https://www.youtube.com" class="fa fa-youtube" ></a>
+		<a href="https://www.instagram.com" class="fa fa-instagram" ></a>
+		<br><br>
+		<h6 style="color: black; text-align: center">
+			<a  href="Contact Us.php">Request</a> | <a href="Contact Us.php">Contact Us</a></h6>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4" style="padding-top: 5%">
+			<ul style="padding: 10%">
+				<li style="padding: 2%"><a href="index.php">Home</a></li>
+				<li style="padding: 2%"><a href="About Us.php" >About us</a> </li>
+				<li style="padding: 2%"><a href="Products.php" >Our Products</a> </li>
+				<li style="padding: 2%"><a href="Contact Us.php" >Contact Us</a> </li>
+				<li style="padding: 2%"><a href="https://www.origin.com/ind/en-us/store" >From ORIGIN</a> </li>
+			</ul>
+		</div>
+		<div class="col-sm-4" style="padding-top: 5%;padding-left: 3%">
+			<ul style="padding: 10%">
+				<li style="padding: 2%"><a href="https://www.ea.com/legal">Legal</a></li>
+				<li style="padding: 2%"><a href="http://tos.ea.com/legalapp/termsofsale/US/en/PC/" >Terms of Sale</a> </li>
+				<li style="padding: 2%"><a href="http://tos.ea.com/legalapp/WEBTERMS/US/en/PC/" >User Agreement</a> </li>
+				<li style="padding: 2%"><a href="https://www.ea.com/about" >Corporate Information</a></li>
+				<li style="padding: 2%"><a href="http://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/" >Privacy and Cookie Policy (Your Privacy Rights)</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-4" style="text-align: center; padding-top: 5%">
+			<p>
+				<img src="title.png"/><br><br>
+				© 2020 Electronic Arts Inc.
+				<br>
+				Seller: Electronic Arts Inc., 209 Redwood Shores Parkway, Redwood City, CA 94065.
+				<br>
+				Grab v10.4.74-2471-f5be7d78
+			</p>
+		</div></div>
+</footer>
+
+</body>
+
+</html>
